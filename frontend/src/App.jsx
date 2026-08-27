@@ -13,7 +13,7 @@ export default function Calendar() {
 
     const newEvent = {
       id: Date.now().toString(),
-      title: Calendario_ZF,
+      title,
       date: info.dateStr
     }
 
