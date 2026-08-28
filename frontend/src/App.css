@@ -225,7 +225,20 @@ h1 {
   font-weight: 750;
 }
 
-.event-dialog input {
+.event-dialog .all-day-field {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  cursor: pointer;
+}
+
+.event-dialog .all-day-field input {
+  width: auto;
+  accent-color: var(--accent);
+}
+
+.event-dialog input,
+.event-dialog select {
   width: 100%;
   border: 1px solid rgba(150, 169, 194, 0.35);
   border-radius: 0.65rem;
@@ -234,9 +247,26 @@ h1 {
   color: var(--ink);
 }
 
-.event-dialog input:focus {
+.event-dialog input:focus,
+.event-dialog select:focus {
   outline: 2px solid rgba(82, 118, 217, 0.3);
   border-color: var(--accent);
+}
+
+.event-notification {
+  position: fixed;
+  z-index: 6;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  max-width: min(24rem, calc(100vw - 3rem));
+  padding: 1rem 1.15rem;
+  border-left: 4px solid var(--accent);
+  border-radius: 0.8rem;
+  background: rgba(244, 248, 255, 0.97);
+  color: var(--ink);
+  box-shadow: 0 12px 30px rgba(36, 48, 68, 0.2);
+  font-size: 0.88rem;
+  font-weight: 700;
 }
 
 .dialog-actions {
