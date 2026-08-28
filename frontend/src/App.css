@@ -116,6 +116,7 @@ h1 {
 
 .calendar-toolbar {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 1rem;
@@ -136,6 +137,124 @@ h1 {
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 0 0 4px rgba(82, 118, 217, 0.12);
+}
+
+.add-event-button,
+.save-button,
+.cancel-button,
+.delete-button,
+.icon-button {
+  border: 0;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  font-weight: 750;
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.add-event-button,
+.save-button {
+  padding: 0.7rem 1rem;
+  background: var(--accent);
+  color: white;
+  box-shadow: 4px 4px 10px rgba(62, 86, 140, 0.22);
+}
+
+.add-event-button:hover,
+.save-button:hover,
+.delete-button:hover,
+.cancel-button:hover,
+.icon-button:hover {
+  transform: translateY(-1px);
+}
+
+.event-dialog-backdrop {
+  position: fixed;
+  z-index: 5;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(36, 48, 68, 0.28);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+.event-dialog {
+  width: min(100%, 31rem);
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  background: rgba(244, 248, 255, 0.96);
+  box-shadow: 0 24px 60px rgba(36, 48, 68, 0.24);
+}
+
+.dialog-heading,
+.dialog-actions,
+.event-fields-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.dialog-heading {
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.dialog-heading h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.5rem;
+}
+
+.icon-button {
+  width: 2.2rem;
+  height: 2.2rem;
+  background: rgba(222, 232, 245, 0.72);
+  color: var(--muted);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.event-dialog label {
+  display: grid;
+  flex: 1;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 750;
+}
+
+.event-dialog input {
+  width: 100%;
+  border: 1px solid rgba(150, 169, 194, 0.35);
+  border-radius: 0.65rem;
+  padding: 0.7rem 0.8rem;
+  background: rgba(255, 255, 255, 0.75);
+  color: var(--ink);
+}
+
+.event-dialog input:focus {
+  outline: 2px solid rgba(82, 118, 217, 0.3);
+  border-color: var(--accent);
+}
+
+.dialog-actions {
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.cancel-button,
+.delete-button {
+  padding: 0.7rem 0.8rem;
+  background: transparent;
+  color: var(--muted);
+}
+
+.delete-button {
+  margin-right: auto;
+  color: #b44d5a;
 }
 
 .calendar-surface {
@@ -234,6 +353,19 @@ h1 {
   .fc .fc-toolbar {
     flex-wrap: wrap;
     gap: 0.6rem;
+  }
+
+  .add-event-button {
+    width: 100%;
+  }
+
+  .event-fields-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .dialog-actions {
+    flex-wrap: wrap;
   }
 }
 
